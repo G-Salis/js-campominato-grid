@@ -1,0 +1,57 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #021626;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header{
+  background-color: lightgray;
+  width: 100%;
+  height: 56px;
+}
+
+.logo img{
+  width: 57px;
+}
+
+.main-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container{
+  width: 500px;
+  height: 500px;
+}
+
+.square_easy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+}
+
+.square_easy span{
+  display: none;
+}
+.square_easy.clicked span{
+  display: block;
+}
+
+.square_easy.even.clicked, .square_hard.even.clicked, .square_crazy.even.clicked{
+  background-color: #3DC4B6;
+}
+.square_easy.odd.clicked{
+  background-color: brown;
+}
