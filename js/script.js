@@ -14,21 +14,27 @@ button.addEventListener("click", function(){
     let grid = 0;
     if(select_mode.value == "easy"){
         grid = 100;
-        alert(select_mode.value);
+        
     } else if(select_mode.value == "normal"){
         grid = 81;
-        alert(select_mode.value);
+       
     } else {
         grid = 49;
-        alert(select_mode.value);
-    }
+       
+    };
+
+    console.log(grid)
+
+    init(grid);
+
 })
 
-init(grid);
 
 
 function init(tot){
     for(let i = 0; i < tot; i++){
+
+        console.log(tot);
 
         // creo l'elemento square e lo aggiungo al container
         const sq = createSquare(container);
@@ -48,6 +54,19 @@ function init(tot){
  * @returns 
  */
 function createSquare(target){
+    let grid = 0;
+    if(select_mode.value == "easy"){
+        grid = 100;
+    } else if(select_mode.value == "normal"){
+        grid = 81;
+
+    } else {
+        grid = 49;
+ 
+    };
+
+    console.log(grid)
+
     const sq = document.createElement('div');
     const numRandom = generateUniqueRandomInt(listNumbers, 1 , grid);
 
@@ -55,16 +74,22 @@ function createSquare(target){
     //const classes = ['square',getEvenOdd(numRandom)]
 
     // even o odd con operatore ternario
+    
+    let class_mode = '';
     if(select_mode.value == "easy"){
-        const class_mode = 'square_easy';
+        class_mode = 'square_easy';
 
     } else if(select_mode.value == "normal"){
-        const class_mode = 'square_normal';
-
+        class_mode = 'square_normal';
+ 
     } else {
-        const class_mode = 'square_crazy';
+        class_mode = 'square_crazy';
     }
-    const classes = ['square_easy', (numRandom % 2) ? 'odd' : 'even'];
+
+    console.log(class_mode)
+
+    const classes = [class_mode, (numRandom % 2) ? 'odd' : 'even'];
+    console.log(classes);
 
     sq.innerHTML = `<span>${numRandom}</span>`;
     sq.classList.add(...classes);

@@ -42,16 +42,42 @@ header{
   color: white;
 }
 
-.square_easy span{
+.square_normal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+}
+
+.square_crazy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+}
+
+
+
+.square_easy span, .square_normal span, .square_crazy span{
   display: none;
 }
-.square_easy.clicked span{
+.square_easy.clicked span, .square_normal.clicked span, .square_crazy.clicked span{
   display: block;
 }
 
-.square_easy.even.clicked, .square_hard.even.clicked, .square_crazy.even.clicked{
+.square_easy.even.clicked, .square_normal.even.clicked, .square_crazy.even.clicked{
   background-color: #3DC4B6;
 }
-.square_easy.odd.clicked{
+.square_easy.odd.clicked, .square_normal.odd.clicked, .square_crazy.odd.clicked{
   background-color: brown;
 }
